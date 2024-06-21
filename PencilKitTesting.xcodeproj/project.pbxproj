@@ -11,9 +11,6 @@
 		18C3C8DB2C25FB10007F3CE9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3C8DA2C25FB10007F3CE9 /* ContentView.swift */; };
 		18C3C8DD2C25FB11007F3CE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18C3C8DC2C25FB11007F3CE9 /* Assets.xcassets */; };
 		18C3C8E02C25FB11007F3CE9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18C3C8DF2C25FB11007F3CE9 /* Preview Assets.xcassets */; };
-		18C3C8EA2C25FB11007F3CE9 /* PencilKitTestingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3C8E92C25FB11007F3CE9 /* PencilKitTestingTests.swift */; };
-		18C3C8F42C25FB11007F3CE9 /* PencilKitTestingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3C8F32C25FB11007F3CE9 /* PencilKitTestingUITests.swift */; };
-		18C3C8F62C25FB11007F3CE9 /* PencilKitTestingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3C8F52C25FB11007F3CE9 /* PencilKitTestingUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +37,7 @@
 		18C3C8DC2C25FB11007F3CE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18C3C8DF2C25FB11007F3CE9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		18C3C8E52C25FB11007F3CE9 /* PencilKitTestingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PencilKitTestingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		18C3C8E92C25FB11007F3CE9 /* PencilKitTestingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilKitTestingTests.swift; sourceTree = "<group>"; };
 		18C3C8EF2C25FB11007F3CE9 /* PencilKitTestingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PencilKitTestingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		18C3C8F32C25FB11007F3CE9 /* PencilKitTestingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilKitTestingUITests.swift; sourceTree = "<group>"; };
-		18C3C8F52C25FB11007F3CE9 /* PencilKitTestingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilKitTestingUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +69,6 @@
 			isa = PBXGroup;
 			children = (
 				18C3C8D72C25FB10007F3CE9 /* PencilKitTesting */,
-				18C3C8E82C25FB11007F3CE9 /* PencilKitTestingTests */,
-				18C3C8F22C25FB11007F3CE9 /* PencilKitTestingUITests */,
 				18C3C8D62C25FB10007F3CE9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,23 +100,6 @@
 				18C3C8DF2C25FB11007F3CE9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		18C3C8E82C25FB11007F3CE9 /* PencilKitTestingTests */ = {
-			isa = PBXGroup;
-			children = (
-				18C3C8E92C25FB11007F3CE9 /* PencilKitTestingTests.swift */,
-			);
-			path = PencilKitTestingTests;
-			sourceTree = "<group>";
-		};
-		18C3C8F22C25FB11007F3CE9 /* PencilKitTestingUITests */ = {
-			isa = PBXGroup;
-			children = (
-				18C3C8F32C25FB11007F3CE9 /* PencilKitTestingUITests.swift */,
-				18C3C8F52C25FB11007F3CE9 /* PencilKitTestingUITestsLaunchTests.swift */,
-			);
-			path = PencilKitTestingUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,7 +241,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18C3C8EA2C25FB11007F3CE9 /* PencilKitTestingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,8 +248,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18C3C8F42C25FB11007F3CE9 /* PencilKitTestingUITests.swift in Sources */,
-				18C3C8F62C25FB11007F3CE9 /* PencilKitTestingUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +402,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,6 +432,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
