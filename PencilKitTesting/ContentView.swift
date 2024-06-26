@@ -26,10 +26,23 @@ struct ContentView: View {
     var body: some View {
         VStack {
             HStack {
-                CanvasView(canvasView: $canvasView1)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Color.white)
-                    .border(Color.gray, width: 1)
+                ZStack {
+                    Color.white
+                    VStack(spacing: 0) {
+                        Spacer()
+                        Rectangle()
+                            .fill(Color.gray)
+                            .frame(height: 1)
+                            .padding(.bottom, 50)
+                        Rectangle()
+                            .fill(Color.gray)
+                            .frame(height: 1)
+                        Spacer()
+                    }
+                    CanvasView(canvasView: $canvasView1)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .border(Color.gray, width: 1)
+                }
                 CanvasView(canvasView: $canvasView2)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(Color.white)
@@ -277,7 +290,7 @@ struct ContentView: View {
         animationLastFrameTime = Date()
         animationTimer?.invalidate()
         
-        let smallerBounds = CGRect(x: 100, y: 300, width: 400, height: 100)
+//        let smallerBounds = CGRect(x: 100, y: 300, width: 400, height: 100)
         
 //        applyTransformation(to: &scaledDrawing, with: smallerBounds)
         applyTransformation(to: &scaledDrawing, x: 100, y: 300, height: 100)
