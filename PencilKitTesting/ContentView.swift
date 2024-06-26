@@ -39,11 +39,11 @@ struct ContentView: View {
                             .frame(height: 1)
                         Spacer()
                     }
-                    CanvasView(canvasView: $canvasView1)
+                    CanvasView(canvasView: $canvasView1, assignPicker: true)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .border(Color.gray, width: 1)
                 }
-                CanvasView(canvasView: $canvasView2)
+                CanvasView(canvasView: $canvasView2, assignPicker: false)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(Color.white)
                     .border(Color.gray, width: 1)
@@ -337,6 +337,7 @@ struct ContentView: View {
 struct CanvasView: UIViewRepresentable {
     @Binding var canvasView: PKCanvasView
     let picker = PKToolPicker()
+    var assignPicker: Bool
 
     func makeUIView(context: Context) -> PKCanvasView {
         canvasView.drawingPolicy = .anyInput
@@ -346,11 +347,17 @@ struct CanvasView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: PKCanvasView, context: Context) {
-        picker.addObserver(canvasView)
-        picker.setVisible(true, forFirstResponder: uiView)
-        DispatchQueue.main.async {
-            uiView.becomeFirstResponder()
+        if assignPicker {
+            picker.addObserver(canvasView)
+            picker.setVisible(true, forFirstResponder: uiView)
+            DispatchQueue.main.async {
+                uiView.becomeFirstResponder()
+            }
         }
+    }
+
+    static func dismantleUIView(_ uiView: PKCanvasView, coordinator: ()) {
+        // Cleanup if necessary
     }
 }
 
