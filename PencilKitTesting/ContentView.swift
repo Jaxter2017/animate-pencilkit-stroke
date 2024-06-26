@@ -227,19 +227,27 @@ struct ContentView: View {
         }
     }
     
-    func applyTransformation(to drawing: inout PKDrawing, with boundingBox: CGRect) {
+    func applyTransformation(to drawing: inout PKDrawing, x: CGFloat, y: CGFloat, height: CGFloat, width: CGFloat? = nil) {
         let drawingBounds = drawing.bounds
-        let scaleX = boundingBox.width / drawingBounds.width
-        let scaleY = boundingBox.height / drawingBounds.height
+        let scaleY = height / drawingBounds.height
+        let scaleX: CGFloat
 
-        // Calculate the translation needed after scaling
+        if let width = width {
+            scaleX = width / drawingBounds.width
+        } else {
+            scaleX = scaleY // preserve aspect ratio
+        }
+
+        // Calculate the new width based on the preserved aspect ratio if width is not provided
         let scaledWidth = drawingBounds.width * scaleX
         let scaledHeight = drawingBounds.height * scaleY
-        let translationX = boundingBox.origin.x + (boundingBox.width - scaledWidth) / 2 - drawingBounds.minX * scaleX
-        let translationY = boundingBox.origin.y + (boundingBox.height - scaledHeight) / 2 - drawingBounds.minY * scaleY
+
+        // Calculate the translation needed after scaling
+        let translationX = x + (scaledWidth - drawingBounds.width * scaleX) / 2 - drawingBounds.minX * scaleX
+        let translationY = y + (height - scaledHeight) / 2 - drawingBounds.minY * scaleY
 
         var transform = CGAffineTransform.identity
-        // Scale the drawing independently for X and Y axes
+        // Scale the drawing
         transform = transform.scaledBy(x: scaleX, y: scaleY)
         // Translate the scaled drawing to the correct position within the bounding box
         transform = transform.translatedBy(x: translationX / scaleX, y: translationY / scaleY)
