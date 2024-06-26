@@ -279,7 +279,8 @@ struct ContentView: View {
         
         let smallerBounds = CGRect(x: 100, y: 300, width: 400, height: 100)
         
-        applyTransformation(to: &scaledDrawing, with: smallerBounds)
+//        applyTransformation(to: &scaledDrawing, with: smallerBounds)
+        applyTransformation(to: &scaledDrawing, x: 100, y: 300, height: 100)
         
         animationTimer = Timer.scheduledTimer(withTimeInterval: 1.0 / 60, repeats: true) { _ in stepAnimation() }
     }
